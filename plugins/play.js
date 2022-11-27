@@ -1,4 +1,4 @@
-﻿const { servers, yta, ytv } = require('../lib/y2mate')
+const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
@@ -27,21 +27,13 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
   await conn.send2ButtonImg(m.chat, await (await fetch(thumb)).buffer(), `
-.
-▄███████████▄
-█████░▀██████
-█████░░░▀████
-█████░░░▄████
-█████░▄██████
-█████████████
-─▀▀▀▀▀▀▀▀▀▀▀─
 *Judul:* ${title}
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
 *Link Sumber:* 
 ${vid.url}
-`.trim(), wm, 'Audio 🎵', `.yta ${vid.url}`, 'Video 🎦', `.yt ${vid.url}`, m)
+`.trim(), wm, `🎵Audio(${filesizeF})`, `.yta ${vid.url}`, `🎦Video(${yt2.filesizeF})`, `.yt ${vid.url} `, m)
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
