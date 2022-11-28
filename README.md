@@ -56,11 +56,12 @@ sudo apt-get install python3 -y
 sudo apt-get install nodejs -y
 sudo apt-get install ffmpeg -y
 sudo apt-get install imagemagick -y
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt-get install -y nodejs gcc g++ make
 git clone https://github.com/hilmifaturahman/Anon-MD
 cd Anon-MD
-sudo-apt get install yarn
-yarn install
-yarn update
+npm install
+npm update
 
 ```
 ---------
