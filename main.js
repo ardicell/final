@@ -107,7 +107,7 @@ conn.isInit = false
 // store.bind(conn.ev)
 // global.store = store
 // console.log(store)
-/*
+
 if (!opts['test']) {
   setInterval(async () => {
     if (db.data) await db.write()
@@ -115,12 +115,6 @@ if (!opts['test']) {
       clearTmp()
     } catch (e) { console.error(e) }
   }, 60 * 1000)
-}*/
-if (!opts['test']) {
-  if (db) setInterval(async () => {
-    if (global.db.data) await db.write()
-    if (opts['autocleartmp'] && (support || {}).find) (tmp = [os.tmpdir(), 'tmp'], tmp.forEach(filename => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])))
-  }, 30 * 1000)
 }
 if (opts['server']) require('./server')(conn, PORT)
 
