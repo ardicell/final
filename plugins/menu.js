@@ -35,13 +35,18 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-Halo %name 👋, %ucapan
+Hai *%name* 👋
+%ucapan
 
-Sekarang Jam %wib WIB Hari %week, Tanggal %date
+*📅Hari:* %week
+*🗓️Tanggal:* %date
+*⌚Jam:* %wib WIB
+*🤖 Bot aktif selama:* %uptime
 
-Limit: %limit
-Level: %level
-Exp: %exp
+*🕒Limit:* %limit
+*📊Level:* %level
+*⏳Exp:* %totalexp
+*⚔️Role:* %role
 %readmore`.trimStart(),
   header: '[%category]',
   body: '• %cmd ',
